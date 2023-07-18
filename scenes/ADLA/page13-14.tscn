@@ -1,0 +1,64 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/page13-14/tree1.webp" type="Texture" id=1]
+[ext_resource path="res://assets/page13-14/bg-page.webp" type="Texture" id=2]
+[ext_resource path="res://assets/page13-14/tree2.webp" type="Texture" id=3]
+[ext_resource path="res://assets/page13-14/tree3.webp" type="Texture" id=4]
+[ext_resource path="res://assets/page13-14/grass.webp" type="Texture" id=5]
+[ext_resource path="res://assets/fonts/Lato-Medium.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://scripts/ADLA/page13-14.gd" type="Script" id=7]
+[ext_resource path="res://components/GUI/GUI.tscn" type="PackedScene" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=2]
+size = 29
+font_data = ExtResource( 6 )
+
+[node name="Page13-14" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 942, 538 )
+scale = Vector2( 0.4, 0.42 )
+frames = SubResource( 1 )
+frame = 2
+speed_scale = 0.5
+playing = true
+
+[node name="ImageGrass" type="TextureRect" parent="."]
+margin_left = 1.0
+margin_right = 1919.0
+margin_bottom = 1083.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 175.0
+margin_top = 277.0
+margin_right = 838.0
+margin_bottom = 547.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Este árbol, en sus más de trescientos años de vida,
+había sido testigo de muchísimas generaciones.
+Conocía muy bien los gustos y las costumbres de
+ocasionales huéspedes y de diversos seres que
+crecían y vivían a lo largo y ancho de sus ramas,
+raíces, hojas y tronco."
+
+[node name="GUI" parent="." instance=ExtResource( 8 )]
+
+[connection signal="tree_entered" from="." to="." method="_on_Page1314_tree_entered"]

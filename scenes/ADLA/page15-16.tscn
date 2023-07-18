@@ -1,0 +1,72 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/page15-16/Tree.webp" type="Texture" id=1]
+[ext_resource path="res://assets/page15-16/bg-page.webp" type="Texture" id=2]
+[ext_resource path="res://components/GUI/GUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/ADLA/page15-16.gd" type="Script" id=4]
+[ext_resource path="res://assets/fonts/Lato-Medium.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/page15-16/hans3.webp" type="Texture" id=6]
+[ext_resource path="res://assets/page15-16/hans4.webp" type="Texture" id=7]
+[ext_resource path="res://assets/page15-16/hans1.webp" type="Texture" id=8]
+[ext_resource path="res://assets/page15-16/hans2.webp" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=1]
+size = 29
+font_data = ExtResource( 5 )
+
+[node name="Page15-16" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="AnimatedHans" type="AnimatedSprite" parent="."]
+position = Vector2( 1123, 856 )
+rotation = 0.599718
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 2 )
+frame = 1
+speed_scale = 0.6
+playing = true
+
+[node name="ImageTree" type="TextureRect" parent="."]
+margin_top = 38.0
+margin_right = 1938.0
+margin_bottom = 1091.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1296.0
+margin_top = 267.0
+margin_right = 1857.0
+margin_bottom = 693.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "A su alrededor lucía también un
+hermoso jardín que cuidaba Hans,
+amante de las coloridas flores, pero
+desapasionado de los árboles. Quién
+no lo había escuchado maldecir y
+reprochar al pobre árbol, o gritarle
+que le robaba la luz, evitando que sus
+hermosas flores crezcan y emanen las
+frescas fragancias que le alegraban
+la vida. Por eso, casi a diario,
+Hans solía estar de mal humor."
+align = 2
+
+[node name="GUI" parent="." instance=ExtResource( 3 )]
+
+[connection signal="tree_entered" from="." to="." method="_on_Page1516_tree_entered"]

@@ -1,0 +1,87 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/page27-28/Fire1.webp" type="Texture" id=1]
+[ext_resource path="res://assets/page27-28/Birds2.webp" type="Texture" id=2]
+[ext_resource path="res://assets/page27-28/Trunks.webp" type="Texture" id=3]
+[ext_resource path="res://assets/page27-28/Birds1.webp" type="Texture" id=4]
+[ext_resource path="res://assets/page27-28/Fire3.webp" type="Texture" id=5]
+[ext_resource path="res://assets/page27-28/Fire2.webp" type="Texture" id=6]
+[ext_resource path="res://assets/page27-28/Birds3.webp" type="Texture" id=7]
+[ext_resource path="res://assets/page27-28/bg_page.webp" type="Texture" id=8]
+[ext_resource path="res://assets/fonts/Lato-Medium.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://components/GUI/GUI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scripts/ADLA/page27-28.gd" type="Script" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=3]
+size = 33
+font_data = ExtResource( 9 )
+
+[node name="Page27-28" type="Node2D"]
+script = ExtResource( 11 )
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="ImageTrunks" type="TextureRect" parent="."]
+margin_right = 1916.0
+margin_bottom = 1080.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="AnimatedFire" type="AnimatedSprite" parent="."]
+position = Vector2( 453, 616 )
+scale = Vector2( 0.35, 0.4 )
+frames = SubResource( 1 )
+speed_scale = 0.8
+playing = true
+
+[node name="AnimatedBirds" type="AnimatedSprite" parent="."]
+position = Vector2( 442, 241 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 2 )
+speed_scale = 0.8
+playing = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 958.0
+margin_top = 177.0
+margin_right = 1835.0
+margin_bottom = 811.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Ari le explicó que los árboles no solamente dan frutos y
+sombra, sino que también son el hogar de muchas criaturas.
+Que sus raíces, tronco, tallos y hojas se parecen a una ciudad
+con grandes edificios de innumerables pisos y habitaciones,
+donde cada rinconcito alberga una infinidad de seres con
+diferentes gustos y costumbres. Le explicó también que
+este drama lo afectaba de manera particular porque en el
+Amazonas, de donde provenía su familia, se talaban árboles
+a diario. Él, desde pequeño, había visto a muchos de sus
+amigos huir en busca de refugio como parte de un éxodo
+obligado en el que los bebés, los ancianitos y los seres más
+vulnerables muchas veces no sobrevivían."
+align = 2
+
+[node name="GUI" parent="." instance=ExtResource( 10 )]
+
+[connection signal="tree_entered" from="." to="." method="_on_Page2728_tree_entered"]

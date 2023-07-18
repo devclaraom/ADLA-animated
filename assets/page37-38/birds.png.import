@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/birds.png-7ec3701d411f3a7547637e292757eebc.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/page37-38/birds.png"
+dest_files=[ "res://.import/birds.png-7ec3701d411f3a7547637e292757eebc.stex" ]
+
+[params]
+
+compress/mode=3
+compress/lossy_quality=0.5
+compress/hdr_mode=1
+compress/bptc_ldr=0
+compress/normal_map=1
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

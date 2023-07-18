@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/page23-24/parrot4.webp" type="Texture" id=1]
+[ext_resource path="res://assets/page23-24/parrot2.webp" type="Texture" id=2]
+[ext_resource path="res://assets/page23-24/parrot3.webp" type="Texture" id=3]
+[ext_resource path="res://assets/page23-24/bg_page.webp" type="Texture" id=4]
+[ext_resource path="res://assets/page23-24/parrot1.webp" type="Texture" id=5]
+[ext_resource path="res://assets/page23-24/Feathers.webp" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/Lato-Medium.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://components/GUI/GUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scripts/ADLA/page23-24.gd" type="Script" id=9]
+[ext_resource path="res://assets/general/pointer_start.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=2]
+size = 33
+font_data = ExtResource( 7 )
+
+[node name="Page23-24" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="ImageFeathers" type="TextureRect" parent="."]
+margin_right = 1611.0
+margin_bottom = 1080.0
+texture = ExtResource( 6 )
+expand = true
+
+[node name="AnimatedParrot" type="AnimatedSprite" parent="."]
+position = Vector2( 278, 284 )
+scale = Vector2( 0.25, 0.25 )
+frames = SubResource( 1 )
+frame = 2
+playing = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 981.0
+margin_top = 184.0
+margin_right = 1811.0
+margin_bottom = 818.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Después de momentos de alta intensidad, y a pesar
+de haber resistido de manera heroica, se escuchó un
+«¡crash!»: era el árbol, que había empezado a quebrarse.
+En ese momento intervino Ari, un joven papagayo y
+huésped ocasional del árbol:
+
+—Señor Hans, ¡reflexione, por favor! No puede talar
+árboles porque forman parte vital de un ecosistema.
+Si continúa, ¡acabará con miles de vidas inocentes!
+
+Entre súplicas y explicaciones, mezcladas con un aire
+de protesta y frustración, Ari comenzó a agitar sus
+alas a una velocidad nunca antes vista, perdiendo
+poco a poco sus coloridas plumas."
+align = 2
+
+[node name="ButtonModalAri" type="Button" parent="."]
+margin_left = 181.0
+margin_top = 405.0
+margin_right = 261.0
+margin_bottom = 485.0
+mouse_default_cursor_shape = 2
+icon = ExtResource( 10 )
+flat = true
+expand_icon = true
+
+[node name="GUI" parent="." instance=ExtResource( 8 )]
+
+[connection signal="tree_entered" from="." to="." method="_on_Page2324_tree_entered"]
+[connection signal="mouse_entered" from="ButtonModalAri" to="." method="_on_ButtonModalAri_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonModalAri" to="." method="_on_ButtonModalAri_mouse_exited"]
+[connection signal="pressed" from="ButtonModalAri" to="." method="_on_ButtonModalAri_pressed"]

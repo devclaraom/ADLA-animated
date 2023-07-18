@@ -1,0 +1,135 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://assets/page39-40/ladybug3-1.webp" type="Texture" id=1]
+[ext_resource path="res://assets/page39-40/ladybug2-2.webp" type="Texture" id=2]
+[ext_resource path="res://assets/page39-40/greenfly1-2.webp" type="Texture" id=3]
+[ext_resource path="res://assets/page39-40/greenfly2-2.webp" type="Texture" id=4]
+[ext_resource path="res://assets/page39-40/ladybug3-2.webp" type="Texture" id=5]
+[ext_resource path="res://assets/page39-40/ladybug2-3.webp" type="Texture" id=6]
+[ext_resource path="res://assets/page39-40/greenfly1-1.webp" type="Texture" id=7]
+[ext_resource path="res://assets/page39-40/greenfly2-3.webp" type="Texture" id=8]
+[ext_resource path="res://assets/page39-40/ladybug3-3.webp" type="Texture" id=9]
+[ext_resource path="res://assets/page39-40/greenfly2-1.webp" type="Texture" id=10]
+[ext_resource path="res://assets/page39-40/ladybug2-1.webp" type="Texture" id=11]
+[ext_resource path="res://assets/page39-40/bg-page.webp" type="Texture" id=12]
+[ext_resource path="res://assets/page39-40/ladybug1.webp" type="Texture" id=13]
+[ext_resource path="res://assets/fonts/text-pages.tres" type="DynamicFont" id=14]
+[ext_resource path="res://scripts/ADLA/page39-40.gd" type="Script" id=15]
+[ext_resource path="res://components/GUI/GUI.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/general/pointer_start.png" type="Texture" id=17]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 2 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 10 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[node name="page39-40" type="Node2D"]
+script = ExtResource( 15 )
+
+[node name="bg-page" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="image-ladybug-1" type="TextureRect" parent="."]
+margin_left = 1495.0
+margin_top = 274.0
+margin_right = 1785.0
+margin_bottom = 535.0
+texture = ExtResource( 13 )
+expand = true
+
+[node name="AnimatedLadybug2" type="AnimatedSprite" parent="."]
+position = Vector2( 1116, 733 )
+scale = Vector2( 0.309896, 0.309896 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="AnimatedLadybug3" type="AnimatedSprite" parent="."]
+position = Vector2( 1113, 238 )
+rotation = -0.472306
+scale = Vector2( 0.246094, 0.246094 )
+frames = SubResource( 2 )
+frame = 2
+playing = true
+
+[node name="AnimatedGreenfly1" type="AnimatedSprite" parent="."]
+position = Vector2( 1530, 861 )
+scale = Vector2( 0.130208, 0.130208 )
+frames = SubResource( 3 )
+frame = 1
+playing = true
+
+[node name="AnimatedGreenfly2" type="AnimatedSprite" parent="."]
+position = Vector2( 1764, 876 )
+scale = Vector2( 0.117969, 0.117969 )
+frames = SubResource( 4 )
+playing = true
+
+[node name="text-page" type="Label" parent="."]
+margin_left = 35.0
+margin_top = 139.0
+margin_right = 875.0
+margin_bottom = 850.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 14 )
+text = "Las hormigas eran las menos complicadas pues, a su
+manera y en solemne marcha, ingresaron discretamente, sin
+molestar ni ejercer violencia alguna. Su único bjetivo
+era encontrar un espacio donde asentarse. En cambio, los
+demás insectos se trenzaron en una lucha mortal: los recién
+llegados buscaron refugio para protegerse de la intensa
+lluvia que se avecinaba y los más grandes aseguraron su
+espacio, mientras los pequeños clamaban compasión y los
+débiles se resignaban a desfallecer en el suelo.
+
+En este ambiente —donde reinaba la ley del más fuerte—,
+a los pulgones verdes les preocupaba defender su espacio
+y, a su vez, estaban aterrados por la masiva presencia de
+mariquitas, sus depredadoras naturales. Presas del pánico,
+los pobres pulgones gritaron desesperadamente e, incluso,
+algunos huyeron de sus aposentos para no ser devorados.
+¡Vaya caos que se vivía!"
+
+[node name="ButtonModalGreenfly" type="Button" parent="."]
+margin_left = 1597.0
+margin_top = 869.0
+margin_right = 1677.0
+margin_bottom = 949.0
+icon = ExtResource( 17 )
+flat = true
+expand_icon = true
+
+[node name="GUI" parent="." instance=ExtResource( 16 )]
+
+[connection signal="tree_entered" from="." to="." method="_on_page3940_tree_entered"]
+[connection signal="pressed" from="ButtonModalGreenfly" to="." method="_on_ButtonModalGreenfly_pressed"]

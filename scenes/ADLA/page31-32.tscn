@@ -1,0 +1,98 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/page31-32/Ladybug2.webp" type="Texture" id=1]
+[ext_resource path="res://assets/page31-32/bg_page.webp" type="Texture" id=2]
+[ext_resource path="res://assets/page31-32/Ladybug1.webp" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/Lato-Medium.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/page31-32/Beetle3.webp" type="Texture" id=5]
+[ext_resource path="res://assets/page31-32/Beetle2.webp" type="Texture" id=6]
+[ext_resource path="res://assets/page31-32/Beetle1.webp" type="Texture" id=7]
+[ext_resource path="res://components/GUI/GUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scripts/ADLA/page31-32.gd" type="Script" id=9]
+[ext_resource path="res://assets/fonts/text-pages.tres" type="DynamicFont" id=10]
+[ext_resource path="res://assets/general/pointer_start.png" type="Texture" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 4 )
+
+[node name="Page31-32" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="AnimatedBeetle" type="AnimatedSprite" parent="."]
+position = Vector2( 617, 668 )
+scale = Vector2( 0.4, 0.45 )
+frames = SubResource( 1 )
+frame = 2
+speed_scale = 0.8
+playing = true
+
+[node name="AnimatedLadybug" type="AnimatedSprite" parent="."]
+position = Vector2( 1624, 249 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 2 )
+speed_scale = 0.8
+playing = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 867.0
+margin_top = 316.0
+margin_right = 1401.0
+margin_bottom = 520.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "—¡Me parece muy bien! —aprobó
+una mariquita, que pretendía
+disputarse el turno con un
+escarabajo más grande."
+align = 2
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 1026.0
+margin_top = 590.0
+margin_right = 1979.0
+margin_bottom = 742.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "—Pase usted —le dijo el escarabajo, que vivía platónicamente
+enamorado de ella—. Mientras compartamos el mismo árbol, no
+me preocupa llegar más tarde. Lo importante es que la siga viendo."
+
+[node name="ButtonModalBeetle" type="Button" parent="."]
+margin_left = 587.0
+margin_top = 736.0
+margin_right = 667.0
+margin_bottom = 816.0
+mouse_default_cursor_shape = 2
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+
+[node name="GUI" parent="." instance=ExtResource( 8 )]
+
+[connection signal="tree_entered" from="." to="." method="_on_Page3132_tree_entered"]
+[connection signal="mouse_entered" from="ButtonModalBeetle" to="." method="_on_ButtonModalBeetle_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonModalBeetle" to="." method="_on_ButtonModalBeetle_mouse_exited"]
+[connection signal="pressed" from="ButtonModalBeetle" to="." method="_on_ButtonModalBeetle_pressed"]

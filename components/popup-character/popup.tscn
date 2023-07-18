@@ -1,0 +1,96 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/general/button-close.png" type="Texture" id=1]
+[ext_resource path="res://components/popup-character/assets/bg-popup.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/title-popup.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/fonts/Lato-Medium.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://components/popup-character/popup.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 0.988235, 0.988235, 0.780392 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[sub_resource type="DynamicFont" id=7]
+size = 25
+font_data = ExtResource( 4 )
+
+[node name="popup" type="CanvasLayer"]
+script = ExtResource( 5 )
+
+[node name="bg-modal" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -400.0
+margin_top = -288.5
+margin_right = 400.0
+margin_bottom = 288.5
+texture = ExtResource( 2 )
+
+[node name="btn-close-modal" type="Button" parent="."]
+margin_left = 1253.0
+margin_top = 233.0
+margin_right = 1403.0
+margin_bottom = 383.0
+mouse_default_cursor_shape = 2
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+icon = ExtResource( 1 )
+flat = true
+expand_icon = true
+
+[node name="label-title" type="Label" parent="."]
+margin_left = 656.0
+margin_top = 377.0
+margin_right = 1256.0
+margin_bottom = 405.0
+custom_fonts/font = ExtResource( 3 )
+text = "Mi personaje"
+align = 1
+valign = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 661.0
+margin_top = 442.0
+margin_right = 1261.0
+margin_bottom = 742.0
+
+[node name="panel-content" type="Panel" parent="ScrollContainer"]
+margin_right = 600.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 6 )
+
+[node name="label-description" type="Label" parent="ScrollContainer/panel-content"]
+margin_left = 25.0
+margin_top = 12.0
+margin_right = 575.0
+margin_bottom = 292.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "La descripción del personaje
+"
+align = 1
+valign = 1
+autowrap = true
+
+[connection signal="pressed" from="btn-close-modal" to="." method="_on_btnclosemodal_pressed"]

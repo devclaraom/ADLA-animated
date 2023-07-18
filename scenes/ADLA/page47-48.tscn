@@ -1,0 +1,84 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/fonts/text-pages.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/page47-48/air3.webp" type="Texture" id=2]
+[ext_resource path="res://assets/page47-48/ladybug1-3.webp" type="Texture" id=3]
+[ext_resource path="res://assets/page47-48/air2.webp" type="Texture" id=4]
+[ext_resource path="res://assets/page47-48/ladybug2.webp" type="Texture" id=5]
+[ext_resource path="res://assets/page47-48/ladybug1-2.webp" type="Texture" id=6]
+[ext_resource path="res://assets/page47-48/air1.webp" type="Texture" id=7]
+[ext_resource path="res://assets/page47-48/ladybug1-1.webp" type="Texture" id=8]
+[ext_resource path="res://assets/page47-48/bg-page.webp" type="Texture" id=9]
+[ext_resource path="res://components/GUI/GUI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scripts/ADLA/page47-48.gd" type="Script" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 4 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="page47-48" type="Node2D"]
+script = ExtResource( 11 )
+
+[node name="bg-page" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 9 )
+expand = true
+
+[node name="AnimatedLadybug1" type="AnimatedSprite" parent="."]
+position = Vector2( 1170, 359 )
+scale = Vector2( 0.274609, 0.274609 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="imageLadybug2" type="TextureRect" parent="."]
+margin_left = 1204.0
+margin_top = 478.0
+margin_right = 1627.0
+margin_bottom = 901.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="AnimatedAir" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 1149, 667 )
+scale = Vector2( 0.430729, 0.430729 )
+frames = SubResource( 2 )
+
+[node name="text-page" type="Label" parent="."]
+margin_left = 86.0
+margin_top = 221.0
+margin_right = 830.0
+margin_bottom = 818.0
+custom_fonts/font = ExtResource( 1 )
+text = "Todo parecía indicar que el problema estaba resuelto.
+La mayoría estaba a salvo en el manzano, que ofrecía
+un cálido refugio entre sus ramas, hojas verdes y
+hermosas flores.
+
+Para mala suerte, esa misma noche unos vientos
+huracanados sacudieron enérgicamente el vecindario.
+La mariquita foránea estaba despierta y vio con claridad
+cómo estos vientos se acercaban como un torbellino,
+dándole tiempo de ponerse a buen recaudo. Desde su
+nuevo refugio, observó también que su vecina juzgona
+no había despertado de su cálido sueño y, si no lo hacía
+pronto, el viento se la llevaría junto a la hojita donde
+reposaba. Entonces voló y la rescató, haciendo lo mismo
+que había aprendido de Linda, Ari y Melífera: ayudar."
+
+[node name="GUI" parent="." instance=ExtResource( 10 )]
+
+[connection signal="tree_entered" from="." to="." method="_on_page4748_tree_entered"]

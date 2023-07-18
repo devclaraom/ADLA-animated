@@ -1,0 +1,212 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://assets/page43-44/bee3.webp" type="Texture" id=1]
+[ext_resource path="res://assets/page37-38/squirrel1-1.webp" type="Texture" id=2]
+[ext_resource path="res://assets/page43-44/bee1.webp" type="Texture" id=3]
+[ext_resource path="res://assets/page43-44/bee2.webp" type="Texture" id=4]
+[ext_resource path="res://assets/page43-44/sky.webp" type="Texture" id=5]
+[ext_resource path="res://assets/page43-44/ladybug1-2.webp" type="Texture" id=6]
+[ext_resource path="res://assets/page37-38/squirrel1-2.webp" type="Texture" id=7]
+[ext_resource path="res://assets/page43-44/ladybug1-1.webp" type="Texture" id=8]
+[ext_resource path="res://assets/page43-44/tree.webp" type="Texture" id=9]
+[ext_resource path="res://assets/page43-44/birds.webp" type="Texture" id=10]
+[ext_resource path="res://assets/page43-44/raccoon1.webp" type="Texture" id=11]
+[ext_resource path="res://assets/page43-44/raccoon2.webp" type="Texture" id=12]
+[ext_resource path="res://assets/page43-44/raccoon3.webp" type="Texture" id=13]
+[ext_resource path="res://assets/page43-44/worm1.webp" type="Texture" id=14]
+[ext_resource path="res://assets/page43-44/worm2.webp" type="Texture" id=15]
+[ext_resource path="res://assets/page43-44/ladybug2-2.webp" type="Texture" id=16]
+[ext_resource path="res://assets/page43-44/ladybug3-1.webp" type="Texture" id=17]
+[ext_resource path="res://assets/page43-44/ladybug3-2.webp" type="Texture" id=18]
+[ext_resource path="res://assets/page43-44/toucan2.webp" type="Texture" id=19]
+[ext_resource path="res://assets/page43-44/ladybug2-1.webp" type="Texture" id=20]
+[ext_resource path="res://assets/page43-44/toucan1.webp" type="Texture" id=21]
+[ext_resource path="res://assets/page43-44/ladybug2-3.webp" type="Texture" id=22]
+[ext_resource path="res://assets/fonts/text-pages.tres" type="DynamicFont" id=23]
+[ext_resource path="res://assets/page45-46/Greenfly1.webp" type="Texture" id=24]
+[ext_resource path="res://scripts/ADLA/page43-44.gd" type="Script" id=25]
+[ext_resource path="res://components/GUI/GUI.tscn" type="PackedScene" id=26]
+[ext_resource path="res://assets/general/pointer_start.png" type="Texture" id=27]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 21 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 20 ), ExtResource( 16 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[node name="page43-44" type="Node2D"]
+script = ExtResource( 25 )
+
+[node name="bg-sky" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="image-birds" type="TextureRect" parent="."]
+margin_left = -1203.0
+margin_top = -230.0
+margin_right = 1102.0
+margin_bottom = 618.0
+texture = ExtResource( 10 )
+
+[node name="bg-tree" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 9 )
+expand = true
+
+[node name="AnimatedBee" type="AnimatedSprite" parent="."]
+position = Vector2( 1765, 138 )
+scale = Vector2( 0.103516, 0.103516 )
+frames = SubResource( 1 )
+frame = 2
+playing = true
+
+[node name="AnimatedSquirrel-1" type="AnimatedSprite" parent="."]
+position = Vector2( 773, 805 )
+scale = Vector2( 0.21888, 0.21888 )
+frames = SubResource( 2 )
+frame = 1
+playing = true
+
+[node name="AnimatedLadybug1" type="AnimatedSprite" parent="."]
+position = Vector2( 490, 832 )
+scale = Vector2( 0.136198, 0.136198 )
+frames = SubResource( 3 )
+playing = true
+
+[node name="AnimatedRaccoon" type="AnimatedSprite" parent="."]
+position = Vector2( 623, 528 )
+scale = Vector2( 0.182812, 0.182812 )
+frames = SubResource( 4 )
+frame = 2
+playing = true
+
+[node name="AnimatedWorm" type="AnimatedSprite" parent="."]
+position = Vector2( 1121, 870 )
+scale = Vector2( 0.134896, 0.134896 )
+frames = SubResource( 5 )
+frame = 1
+playing = true
+
+[node name="AnimatedToucan" type="AnimatedSprite" parent="."]
+position = Vector2( 366, 758 )
+scale = Vector2( 0.129688, 0.129688 )
+frames = SubResource( 6 )
+frame = 1
+playing = true
+
+[node name="AnimatedLadybug3" type="AnimatedSprite" parent="."]
+position = Vector2( 195, 556 )
+scale = Vector2( 0.0957031, 0.0957031 )
+frames = SubResource( 7 )
+frame = 1
+playing = true
+
+[node name="AnimatedLadybug2" type="AnimatedSprite" parent="."]
+position = Vector2( 928, 913 )
+scale = Vector2( 0.136589, 0.136589 )
+frames = SubResource( 8 )
+frame = 1
+playing = true
+
+[node name="text-page" type="Label" parent="."]
+margin_left = 1111.0
+margin_top = 310.0
+margin_right = 1874.0
+margin_bottom = 747.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 23 )
+text = "De hecho, allí había mucho prójimo necesitando un
+techo. Los que ya lo tenían, protegían seriamente su
+espacio; y los recién llegados buscaban un pequeño
+refugio donde acomodarse. Por eso, Melífera se propuso
+organizar de inmediato la convivencia. Pronto, voló a
+cada uno de los rincones del manzano y pidió a todos que
+pusieran de su parte. Sin embargo, las demandas —que
+eran justificadas— no tomaban en cuenta la capacidad del
+hospitalario, pero sobrepoblado árbol, que trataba con
+todas sus fuerzas de estirar sus ramas para albergar a las
+criaturas desamparadas y lograr así un ambiente de paz."
+align = 2
+
+[node name="imageGreenfly" type="TextureRect" parent="."]
+margin_left = 526.0
+margin_top = 841.0
+margin_right = 654.0
+margin_bottom = 969.0
+texture = ExtResource( 24 )
+expand = true
+
+[node name="Button" type="Button" parent="."]
+visible = false
+margin_left = 323.0
+margin_top = 798.0
+margin_right = 403.0
+margin_bottom = 878.0
+icon = ExtResource( 27 )
+flat = true
+expand_icon = true
+
+[node name="GUI" parent="." instance=ExtResource( 26 )]
+
+[connection signal="tree_entered" from="." to="." method="_on_page4344_tree_entered"]

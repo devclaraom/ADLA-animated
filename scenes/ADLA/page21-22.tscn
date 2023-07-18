@@ -1,0 +1,101 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://assets/page21-22/hans3.webp" type="Texture" id=1]
+[ext_resource path="res://assets/page21-22/tree.webp" type="Texture" id=2]
+[ext_resource path="res://assets/page21-22/hans4.webp" type="Texture" id=3]
+[ext_resource path="res://assets/page21-22/hans1.webp" type="Texture" id=4]
+[ext_resource path="res://assets/page21-22/linda1.webp" type="Texture" id=5]
+[ext_resource path="res://assets/page21-22/bg-page.webp" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/Lato-Medium.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://scripts/ADLA/page21-22.gd" type="Script" id=8]
+[ext_resource path="res://components/GUI/GUI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/page21-22/linda3.webp" type="Texture" id=10]
+[ext_resource path="res://assets/page21-22/hans2.webp" type="Texture" id=11]
+[ext_resource path="res://assets/page21-22/hans5.webp" type="Texture" id=12]
+[ext_resource path="res://assets/page21-22/linda4.webp" type="Texture" id=13]
+[ext_resource path="res://assets/page21-22/hans6.webp" type="Texture" id=14]
+[ext_resource path="res://assets/page21-22/linda2.webp" type="Texture" id=15]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 15 ), ExtResource( 10 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 11 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 12 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 7 )
+
+[node name="Page21-22" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 6 )
+expand = true
+
+[node name="ImageTree" type="TextureRect" parent="."]
+margin_right = 1922.0
+margin_bottom = 1081.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="AnimatedLinda" type="AnimatedSprite" parent="."]
+position = Vector2( 327, 744 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 1 )
+frame = 3
+speed_scale = 0.8
+playing = true
+
+[node name="AnimatedHans" type="AnimatedSprite" parent="."]
+position = Vector2( 1382, 654 )
+scale = Vector2( 0.852577, 0.846416 )
+frames = SubResource( 3 )
+frame = 5
+playing = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 168.0
+margin_top = 517.0
+margin_right = 933.0
+margin_bottom = 787.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Hans la ignoró y siguió aserrando a su «rival» en medio del
+caos que se vivía y el ensordecedor ruido de la
+motosierra. Parecía el escenario de
+una guerra, una desproporcionada
+lucha sin cuartel en la que los
+pobres moradores del árbol
+habían quedado atrapados."
+align = 2
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 160.0
+margin_top = 212.0
+margin_right = 948.0
+margin_bottom = 480.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "El alboroto y los gritos crecieron tanto que todo el vecindario
+corrió a mirar.
+
+—¿Por qué quiere derribarlo? —preguntó Linda, una ingenua
+niña que solía pasear por aquel jardín y jugar en el árbol—.
+¿Acaso ya está muerto?"
+
+[node name="GUI" parent="." instance=ExtResource( 9 )]
+
+[connection signal="tree_entered" from="." to="." method="_on_Page2122_tree_entered"]

@@ -1,0 +1,134 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/page37-38/tree-1.webp" type="Texture" id=1]
+[ext_resource path="res://assets/page37-38/squirrel1-1.webp" type="Texture" id=2]
+[ext_resource path="res://assets/page37-38/squirrel2-2.webp" type="Texture" id=3]
+[ext_resource path="res://assets/page37-38/worm-2.webp" type="Texture" id=4]
+[ext_resource path="res://assets/page37-38/tree-2.webp" type="Texture" id=5]
+[ext_resource path="res://assets/page37-38/squirrel2-1.webp" type="Texture" id=6]
+[ext_resource path="res://assets/page37-38/bg-sky.webp" type="Texture" id=7]
+[ext_resource path="res://assets/page37-38/birds.webp" type="Texture" id=8]
+[ext_resource path="res://assets/page37-38/worm-1.webp" type="Texture" id=9]
+[ext_resource path="res://assets/page37-38/squirrel1-2.webp" type="Texture" id=10]
+[ext_resource path="res://assets/fonts/text-pages.tres" type="DynamicFont" id=11]
+[ext_resource path="res://components/GUI/GUI.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scripts/ADLA/page37-38.gd" type="Script" id=13]
+[ext_resource path="res://assets/general/pointer_start.png" type="Texture" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[node name="page37-38" type="Node2D"]
+script = ExtResource( 13 )
+
+[node name="bg-sky" type="TextureRect" parent="."]
+margin_top = -3.0
+margin_right = 1920.0
+margin_bottom = 1077.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="image-birds" type="TextureRect" parent="."]
+margin_left = -8.0
+margin_top = 461.0
+margin_right = 3092.0
+margin_bottom = 1284.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="image-tree-2" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="AnimatedWorm" type="AnimatedSprite" parent="."]
+position = Vector2( 569, 886 )
+scale = Vector2( 0.0755208, 0.0755208 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="AnimatedSquirrel-1" type="AnimatedSprite" parent="."]
+position = Vector2( 1606, 749 )
+scale = Vector2( 0.31901, 0.31901 )
+frames = SubResource( 2 )
+playing = true
+
+[node name="AnimatedSquirrel-2" type="AnimatedSprite" parent="."]
+position = Vector2( 1379, 842 )
+scale = Vector2( 0.333984, 0.333984 )
+frames = SubResource( 3 )
+frame = 1
+playing = true
+
+[node name="image-tree-1" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="text-page-37" type="Label" parent="."]
+margin_left = 88.0
+margin_top = 65.0
+margin_right = 856.0
+margin_bottom = 356.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "—¡Oh, mami, estos invasores están sucios! —repetía
+desde su escondite una oruga del manzano
+que prefería taparse los ojitos abultados.
+
+Y es que nadie allí se había enterado de la tragedia del
+árbol vecino ni de que los visitantes no estaban sucios,
+sino solamente empolvados por el aserrín que se
+desprendía del árbol cuando la sierra lo cortaba."
+align = 1
+
+[node name="text-page-38" type="Label" parent="."]
+margin_left = 1007.0
+margin_top = 77.0
+margin_right = 1775.0
+margin_bottom = 410.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "Las ardillas, temerosas y avergonzadas por las quejas
+y reproches de los moradores del manzano «invadido»,
+subieron rápidamente a las ramas más altas
+apenas llegaron; pero allí el estrés no les fue ajeno y,
+muy nerviosas, empezaron a castañetear los dientes."
+align = 1
+
+[node name="ButtonModalSquirrel" type="Button" parent="."]
+margin_left = 1307.0
+margin_top = 908.0
+margin_right = 1387.0
+margin_bottom = 988.0
+icon = ExtResource( 14 )
+flat = true
+expand_icon = true
+
+[node name="GUI" parent="." instance=ExtResource( 12 )]
+
+[connection signal="tree_entered" from="." to="." method="_on_page3738_tree_entered"]
+[connection signal="pressed" from="ButtonModalSquirrel" to="." method="_on_ButtonModalSquirrel_pressed"]

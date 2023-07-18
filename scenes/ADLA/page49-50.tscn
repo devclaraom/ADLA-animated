@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/fonts/text-pages.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/page49-50/tree.webp" type="Texture" id=2]
+[ext_resource path="res://assets/page49-50/branch1.webp" type="Texture" id=3]
+[ext_resource path="res://assets/page49-50/bg-page.webp" type="Texture" id=4]
+[ext_resource path="res://assets/page49-50/floor.webp" type="Texture" id=5]
+[ext_resource path="res://components/GUI/GUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/ADLA/page49-50.gd" type="Script" id=7]
+[ext_resource path="res://assets/general/pointer_start.png" type="Texture" id=8]
+
+[node name="page49-50" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="bg-page" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="imageTree" type="TextureRect" parent="."]
+margin_right = 1426.0
+margin_bottom = 1080.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="imageFloor" type="TextureRect" parent="."]
+margin_left = -4.0
+margin_top = 298.0
+margin_right = 1916.0
+margin_bottom = 1119.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="imageBranch" type="TextureRect" parent="."]
+margin_left = 95.0
+margin_top = -190.0
+margin_right = 1402.0
+margin_bottom = 1117.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="page-text" type="Label" parent="."]
+margin_left = 1157.0
+margin_top = 187.0
+margin_right = 1782.0
+margin_bottom = 624.0
+custom_fonts/font = ExtResource( 1 )
+text = "Lamentablemente, no todos corrieron con la
+misma suerte y la situación empeoró, pues al
+ventarrón se le sumó una fuerte granizada.
+
+El árbol luchó y luchó por mantenerse firme,
+logrando ignorar el cansancio y el sobrepeso,
+pero sin ocultar su miedo ante la incertidumbre
+de imaginar lo que podía sucederle a sus
+huéspedes. Inevitablemente, ocurrió lo que
+se temía: un gran número de moradores
+terminó cayendo al suelo de forma fatal."
+align = 1
+
+[node name="ButtonModalTree" type="Button" parent="."]
+visible = false
+margin_left = 390.0
+margin_top = 554.0
+margin_right = 470.0
+margin_bottom = 634.0
+icon = ExtResource( 8 )
+flat = true
+expand_icon = true
+
+[node name="GUI" parent="." instance=ExtResource( 6 )]
+
+[connection signal="tree_entered" from="." to="." method="_on_page4950_tree_entered"]
+[connection signal="pressed" from="ButtonModalTree" to="." method="_on_ButtonModalTree_pressed"]

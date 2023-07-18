@@ -1,0 +1,112 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://assets/page35-36/ladybug1-1.webp" type="Texture" id=1]
+[ext_resource path="res://assets/page35-36/ladybug2-1.webp" type="Texture" id=2]
+[ext_resource path="res://assets/page35-36/ladybug1-2.webp" type="Texture" id=3]
+[ext_resource path="res://assets/page35-36/ladybug2-2.webp" type="Texture" id=4]
+[ext_resource path="res://assets/page35-36/ladybug2-3.webp" type="Texture" id=5]
+[ext_resource path="res://assets/page35-36/ladybug1-3.webp" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/text-pages.tres" type="DynamicFont" id=7]
+[ext_resource path="res://assets/page35-36/tree1.webp" type="Texture" id=8]
+[ext_resource path="res://assets/page35-36/tree2.webp" type="Texture" id=9]
+[ext_resource path="res://assets/page35-36/bg-sky.webp" type="Texture" id=10]
+[ext_resource path="res://components/GUI/GUI.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scripts/ADLA/page35-36.gd" type="Script" id=12]
+[ext_resource path="res://assets/general/pointer_start.png" type="Texture" id=13]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[node name="page35-36" type="Node2D"]
+script = ExtResource( 12 )
+
+[node name="bg-sky" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 10 )
+expand = true
+
+[node name="bg-tree-1" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="bg-tree-2" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 9 )
+expand = true
+
+[node name="text-page" type="Label" parent="."]
+margin_left = 84.0
+margin_top = 88.0
+margin_right = 818.0
+margin_bottom = 925.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "Al mismo tiempo, en el árbol del jardín de Linda otro
+conflicto estallaba, pues los habitantes del manzano
+protestaban por la invasión:
+
+—¿Con qué derecho crees que vas a invadir
+mi camita limpia si traes el cuerpo lleno de
+polvo? Solo Dios sabe qué malos hábitos
+tienes, seguro te revuelcas en cualquier lugar
+polvoriento —reclamaba una ofendida
+mariquita del manzano.
+
+—¡No me insultes! No tienes derecho a
+juzgarme por mi apariencia —replicó ofendida
+la mariquita foránea.
+
+—Solo juzgo lo que veo —contestó su rival, que
+se oponía a que invadieran su territorio.
+
+Esa lucha por el espacio significaba
+salvaguardar la vida misma."
+
+[node name="AnimatedLadybug-1" type="AnimatedSprite" parent="."]
+position = Vector2( 1055, 649 )
+scale = Vector2( 0.290625, 0.290625 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="AnimatedLadybug-2" type="AnimatedSprite" parent="."]
+position = Vector2( 1475, 628 )
+scale = Vector2( 0.359896, 0.359896 )
+frames = SubResource( 2 )
+frame = 2
+playing = true
+
+[node name="ButtonModalLadybug" type="Button" parent="."]
+margin_left = 1460.0
+margin_top = 769.0
+margin_right = 1540.0
+margin_bottom = 849.0
+icon = ExtResource( 13 )
+flat = true
+expand_icon = true
+
+[node name="GUI" parent="." instance=ExtResource( 11 )]
+
+[connection signal="tree_entered" from="." to="." method="_on_page3536_tree_entered"]
+[connection signal="pressed" from="ButtonModalLadybug" to="." method="_on_ButtonModalLadybug_pressed"]

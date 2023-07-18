@@ -1,0 +1,148 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://assets/page11-12/squirrel2-3.webp" type="Texture" id=1]
+[ext_resource path="res://assets/page11-12/squirrel1-1.webp" type="Texture" id=2]
+[ext_resource path="res://assets/page11-12/birds1.webp" type="Texture" id=3]
+[ext_resource path="res://assets/page11-12/sunbeams.webp" type="Texture" id=4]
+[ext_resource path="res://assets/page11-12/raccoon1.webp" type="Texture" id=5]
+[ext_resource path="res://assets/page11-12/squirrel2-1.webp" type="Texture" id=6]
+[ext_resource path="res://assets/page11-12/squirrel2-2.webp" type="Texture" id=7]
+[ext_resource path="res://assets/page11-12/squirrel1-2.webp" type="Texture" id=8]
+[ext_resource path="res://assets/page11-12/raccoon2.webp" type="Texture" id=9]
+[ext_resource path="res://assets/page11-12/raccoon3.webp" type="Texture" id=10]
+[ext_resource path="res://assets/page11-12/squirrel1-3.webp" type="Texture" id=11]
+[ext_resource path="res://assets/page11-12/background-page.webp" type="Texture" id=12]
+[ext_resource path="res://assets/page11-12/birds2.webp" type="Texture" id=13]
+[ext_resource path="res://assets/fonts/Lato-Medium.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://assets/page11-12/t.webp" type="Texture" id=15]
+[ext_resource path="res://scripts/ADLA/page11-12.gd" type="Script" id=16]
+[ext_resource path="res://assets/page11-12/tree.webp" type="Texture" id=17]
+[ext_resource path="res://components/GUI/GUI.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/general/pointer_start.png" type="Texture" id=19]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=5]
+size = 29
+font_data = ExtResource( 14 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 8 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Page11-12" type="Node2D"]
+script = ExtResource( 16 )
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="ImageTree" type="TextureRect" parent="."]
+margin_left = 0.00012207
+margin_top = 6.10352e-05
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 17 )
+
+[node name="AnimatedBirds" type="AnimatedSprite" parent="."]
+position = Vector2( 1704.31, 696.812 )
+scale = Vector2( 0.389632, 0.372343 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="AnimatedSquirrel2" type="AnimatedSprite" parent="."]
+position = Vector2( 1638, 690 )
+scale = Vector2( 0.19873, 0.233529 )
+frames = SubResource( 2 )
+frame = 1
+speed_scale = 0.3
+playing = true
+
+[node name="AnimatedRacoon" type="AnimatedSprite" parent="."]
+position = Vector2( 316, 571 )
+scale = Vector2( 0.14388, 0.153255 )
+frames = SubResource( 4 )
+frame = 1
+speed_scale = 0.3
+playing = true
+
+[node name="ButtonModalRacoon" type="Button" parent="."]
+margin_left = 260.0
+margin_top = 618.0
+margin_right = 340.0
+margin_bottom = 698.0
+mouse_default_cursor_shape = 2
+icon = ExtResource( 19 )
+flat = true
+expand_icon = true
+
+[node name="Sunbeams" type="Sprite" parent="."]
+position = Vector2( 760, 606.5 )
+scale = Vector2( 0.401794, 0.404696 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1199.0
+margin_top = 203.0
+margin_right = 1976.0
+margin_bottom = 473.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "              odos los días, desde muy temprano, las
+              ardillas y otros animalitos se despertaban
+con la salida del sol. «¡Qué agradable descanso!»,
+exclamaban. Se escuchaba el trinar de los pajaritos,
+el viento —gran compañero— acariciaba a todos por
+igual y un agradecido árbol correspondía abanicando
+sus hojitas."
+
+[node name="ImageT" type="TextureRect" parent="."]
+margin_left = 1160.0
+margin_top = 102.0
+margin_right = 1298.0
+margin_bottom = 290.0
+texture = ExtResource( 15 )
+expand = true
+
+[node name="AnimatedSquirrel1" type="AnimatedSprite" parent="."]
+position = Vector2( 462, 846 )
+scale = Vector2( 0.171354, 0.147396 )
+frames = SubResource( 3 )
+frame = 2
+speed_scale = 0.3
+playing = true
+
+[node name="GUI" parent="." instance=ExtResource( 18 )]
+
+[connection signal="tree_entered" from="." to="." method="_on_Page1112_tree_entered"]
+[connection signal="mouse_entered" from="ButtonModalRacoon" to="." method="_on_ButtonModalRacoon_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonModalRacoon" to="." method="_on_ButtonModalRacoon_mouse_exited"]
+[connection signal="pressed" from="ButtonModalRacoon" to="." method="_on_ButtonShowModal_pressed"]

@@ -1,0 +1,208 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://assets/page19-20/bg-page.webp" type="Texture" id=1]
+[ext_resource path="res://assets/page19-20/ladybug-red3.webp" type="Texture" id=2]
+[ext_resource path="res://assets/page19-20/ant1-2.webp" type="Texture" id=3]
+[ext_resource path="res://assets/page19-20/ant1-1.webp" type="Texture" id=4]
+[ext_resource path="res://assets/page19-20/ant2-1.webp" type="Texture" id=5]
+[ext_resource path="res://assets/page19-20/greenfly3.webp" type="Texture" id=6]
+[ext_resource path="res://assets/page19-20/ladybug-blue1-1.webp" type="Texture" id=7]
+[ext_resource path="res://assets/page19-20/ladybug-blue1-2.webp" type="Texture" id=8]
+[ext_resource path="res://assets/page19-20/ladybug-blue2-2.webp" type="Texture" id=9]
+[ext_resource path="res://assets/page19-20/ladybug-blue2-1.webp" type="Texture" id=10]
+[ext_resource path="res://assets/page19-20/ant2-3.webp" type="Texture" id=11]
+[ext_resource path="res://assets/page19-20/ladybug-red2.webp" type="Texture" id=12]
+[ext_resource path="res://assets/page19-20/ladybug-red1.webp" type="Texture" id=13]
+[ext_resource path="res://assets/page19-20/spider.webp" type="Texture" id=14]
+[ext_resource path="res://assets/page19-20/ant2-2.webp" type="Texture" id=15]
+[ext_resource path="res://assets/page19-20/ant1-3.webp" type="Texture" id=16]
+[ext_resource path="res://assets/page19-20/greenfly1.webp" type="Texture" id=17]
+[ext_resource path="res://assets/fonts/Lato-Medium.ttf" type="DynamicFontData" id=18]
+[ext_resource path="res://components/GUI/GUI.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scripts/ADLA/page19-20.gd" type="Script" id=20]
+[ext_resource path="res://assets/page19-20/greenfly2.webp" type="Texture" id=21]
+[ext_resource path="res://assets/page33-34/Sawdust.webp" type="Texture" id=22]
+[ext_resource path="res://assets/general/pointer_start.png" type="Texture" id=23]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 15 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 17 ), ExtResource( 21 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 21 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=8]
+size = 29
+font_data = ExtResource( 18 )
+
+[node name="Page19-20" type="Node2D"]
+script = ExtResource( 20 )
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="AnimatedAnt1" type="AnimatedSprite" parent="."]
+position = Vector2( 1691, 837 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 1 )
+frame = 2
+speed_scale = 0.8
+playing = true
+
+[node name="AnimatedAnt2" type="AnimatedSprite" parent="."]
+position = Vector2( 1607, 902 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 2 )
+frame = 2
+speed_scale = 0.8
+playing = true
+flip_h = true
+
+[node name="AnimatedLadybugRed1" type="AnimatedSprite" parent="."]
+position = Vector2( 1824, 673 )
+scale = Vector2( 0.15, 0.15 )
+frames = SubResource( 3 )
+speed_scale = 0.8
+playing = true
+
+[node name="AnimatedLadybugBlue1" type="AnimatedSprite" parent="."]
+position = Vector2( 1416, 799 )
+scale = Vector2( 0.15, 0.15 )
+frames = SubResource( 4 )
+speed_scale = 0.8
+playing = true
+
+[node name="AnimatedLadybugBlue2" type="AnimatedSprite" parent="."]
+position = Vector2( 1239, 906 )
+scale = Vector2( 0.15, 0.15 )
+frames = SubResource( 5 )
+speed_scale = 0.8
+playing = true
+
+[node name="AnimatedGreenfly1" type="AnimatedSprite" parent="."]
+position = Vector2( 569, 925 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 6 )
+frame = 1
+speed_scale = 0.8
+playing = true
+flip_h = true
+
+[node name="AnimatedGreenfly2" type="AnimatedSprite" parent="."]
+position = Vector2( 321, 946 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 7 )
+frame = 1
+speed_scale = 0.8
+playing = true
+flip_h = true
+
+[node name="ImageSpider" type="TextureRect" parent="."]
+margin_left = 1155.0
+margin_top = 56.0
+margin_right = 3075.0
+margin_bottom = 1976.0
+rect_scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 14 )
+
+[node name="ImageSawdust" type="TextureRect" parent="."]
+margin_left = 606.0
+margin_top = 425.0
+margin_right = 1917.0
+margin_bottom = 1084.0
+texture = ExtResource( 22 )
+expand = true
+
+[node name="ButtonModalSpider" type="Button" parent="."]
+margin_left = 1533.0
+margin_top = 507.0
+margin_right = 1613.0
+margin_bottom = 587.0
+mouse_default_cursor_shape = 2
+icon = ExtResource( 23 )
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 121.0
+margin_top = 190.0
+margin_right = 959.0
+margin_bottom = 850.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Mientras tanto, en el árbol, el desconcierto se oía
+a viva voz:
+
+—¿Por qué tanto ruido? —comentaban los escarabajos.
+
+—¿Qué está pasando? —se preguntaban asustadas las
+hormiguitas.
+
+—¡Qué locura es esta! —exclamaba mamá araña.
+
+—¿De dónde viene tantísimo aserrín? —se indignaban
+los pulgones y las mariquitas.
+
+Estas sacudían sus alas tratando de quitarse el polvo de
+encima, tarea inútil pues, al poco tiempo, tenían otra vez
+el cuerpo cubierto por los finos residuos del árbol, que
+permanecía en pie."
+
+[node name="GUI" parent="." instance=ExtResource( 19 )]
+
+[connection signal="tree_entered" from="." to="." method="_on_Page1920_tree_entered"]
+[connection signal="mouse_entered" from="ButtonModalSpider" to="." method="_on_ButtonModalSpider_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonModalSpider" to="." method="_on_ButtonModalSpider_mouse_exited"]
+[connection signal="pressed" from="ButtonModalSpider" to="." method="_on_ButtonModalSpider_pressed"]

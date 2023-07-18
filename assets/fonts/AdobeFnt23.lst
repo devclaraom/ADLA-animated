@@ -1,0 +1,215 @@
+%!Adobe-FontList 1.23
+%Locale:0x80a
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:04b24
+FamilyName:04b
+StyleName:24
+FullName:04b 24
+MenuName:04b
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\enero 2023\Carpetas idiomas completos enero 2023\empaquetados - febrero 2023\Carpeta ESPAÑOL ADRIANO\Document fonts\04B_5.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:17512
+FileModTime:952050406
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,04b 24
+NameArray:0,Win,1,04b
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Lato-Black
+FamilyName:Lato
+StyleName:Black
+FullName:Lato Black
+MenuName:Lato Black
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\enero 2023\Carpetas idiomas completos enero 2023\empaquetados - febrero 2023\Carpeta ESPAÑOL ADRIANO\Document fonts\Lato-Black.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:614544
+FileModTime:1438904518
+WeightClass:900
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Lato Black
+NameArray:0,Win,1,Lato Black
+NameArray:0,Win,16,Lato
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Lato-Bold
+FamilyName:Lato
+StyleName:Bold
+FullName:Lato Bold
+MenuName:Lato
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:D:\enero 2023\Carpetas idiomas completos enero 2023\empaquetados - febrero 2023\Carpeta ESPAÑOL ADRIANO\Document fonts\Lato-Bold.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:657188
+FileModTime:1438904518
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Lato Bold
+NameArray:0,Win,1,Lato
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Lato-Heavy
+FamilyName:Lato
+StyleName:Heavy
+FullName:Lato Heavy
+MenuName:Lato Heavy
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\enero 2023\Carpetas idiomas completos enero 2023\empaquetados - febrero 2023\Carpeta ESPAÑOL ADRIANO\Document fonts\Lato-Heavy.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:665420
+FileModTime:1438904518
+WeightClass:800
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Lato Heavy
+NameArray:0,Win,1,Lato Heavy
+NameArray:0,Win,16,Lato
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Lato-HeavyItalic
+FamilyName:Lato
+StyleName:Heavy Italic
+FullName:Lato Heavy Italic
+MenuName:Lato Heavy
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:D:\enero 2023\Carpetas idiomas completos enero 2023\empaquetados - febrero 2023\Carpeta ESPAÑOL ADRIANO\Document fonts\Lato-HeavyItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:698924
+FileModTime:1438904520
+WeightClass:800
+WidthClass:5
+AngleClass:1
+NameArray:0,Mac,4,Lato Heavy Italic
+NameArray:0,Win,1,Lato Heavy
+NameArray:0,Win,16,Lato
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Lato-Italic
+FamilyName:Lato
+StyleName:Italic
+FullName:Lato Italic
+MenuName:Lato
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:D:\enero 2023\Carpetas idiomas completos enero 2023\empaquetados - febrero 2023\Carpeta ESPAÑOL ADRIANO\Document fonts\Lato-Italic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:723544
+FileModTime:1438904520
+WeightClass:400
+WidthClass:5
+AngleClass:1
+NameArray:0,Mac,4,Lato Italic
+NameArray:0,Win,1,Lato
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Lato-Medium
+FamilyName:Lato
+StyleName:Medium
+FullName:Lato Medium
+MenuName:Lato Medium
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\enero 2023\Carpetas idiomas completos enero 2023\empaquetados - febrero 2023\Carpeta ESPAÑOL ADRIANO\Document fonts\Lato-Medium.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:637068
+FileModTime:1438904520
+WeightClass:500
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Lato Medium
+NameArray:0,Win,1,Lato Medium
+NameArray:0,Win,16,Lato
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Lato-MediumItalic
+FamilyName:Lato
+StyleName:Medium Italic
+FullName:Lato Medium Italic
+MenuName:Lato Medium
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:D:\enero 2023\Carpetas idiomas completos enero 2023\empaquetados - febrero 2023\Carpeta ESPAÑOL ADRIANO\Document fonts\Lato-MediumItalic.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:695588
+FileModTime:1438904520
+WeightClass:500
+WidthClass:5
+AngleClass:1
+NameArray:0,Mac,4,Lato Medium Italic
+NameArray:0,Win,1,Lato Medium
+NameArray:0,Win,16,Lato
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Lato-Regular
+FamilyName:Lato
+StyleName:Regular
+FullName:Lato Regular
+MenuName:Lato
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\enero 2023\Carpetas idiomas completos enero 2023\empaquetados - febrero 2023\Carpeta ESPAÑOL ADRIANO\Document fonts\Lato-Regular.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:657212
+FileModTime:1438904520
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Lato Regular
+NameArray:0,Win,1,Lato
+%EndFont
+
